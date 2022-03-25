@@ -46,6 +46,7 @@ body {
 .wrapper {
   display: flex;
   margin-left: 10px;
+  height: 800px;
 }
 
 .sidebar {
@@ -54,6 +55,7 @@ body {
 
 .posts {
   flex: 2 0 0;
+  position: relative;
 }
 
 .sidebar, .posts {
@@ -101,10 +103,19 @@ body {
 
 /* Post */
 
+
 .post {
-  display: none;
+  display: block;
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+  padding-right: 40px;
+  
+  
   &.active {
-    display: block;
+    transition: opacity 1s;
+    opacity: 1;
+    z-index: 1;  
   }
 }
 

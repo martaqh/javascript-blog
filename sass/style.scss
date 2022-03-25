@@ -76,6 +76,10 @@ body {
   text-align: center;
 }
 
+.subtitle {
+  text-align: center;
+}
+
 /* Lists */
 
 .list {
@@ -128,4 +132,19 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+/* Articles */
+
+#article-1 {
+  font-family: 'Gill Sans', sans-serif;
+}
+
+#article-2 {
+  font-family: Helvetica, sans-serif;
+}
+
+#article-3 {
+  font-family: Garamond, serif;
+
 }

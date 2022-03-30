@@ -258,9 +258,6 @@ function generateAuthors(){
 generateAuthors();
 
 
-
-
-
 function authorClickHandler(event){
   /* prevent default action for this event */
   event.preventDefault();
@@ -272,7 +269,7 @@ function authorClickHandler(event){
 
   const href = clickedElement.getAttribute('href');
 
-  /* TUUUUUUUUU! /* make a new constant "author" and extract author from the "href" constant */
+  /* make a new constant "author" and extract author from the "href" constant */
 
   const author = href.replace('#author-', '');
   console.log(author);
@@ -306,16 +303,16 @@ function authorClickHandler(event){
 
     authorLink.classList.add('active');
 
-  /* END LOOP: for each found tag link */
+  /* END LOOP: for each found author link */
   }
 
-  /* execute function "generateTitleLinks" with article selector as argument */
+  /* execute function "generateTitleLinks" with author selector as argument */
 
   generateTitleLinks('[data-author="' + author + '"]');
 }
 
 function addClickListenersToAuthors() {
-  /* find all links to tags */
+  /* find all links to authors */
 
   const linksToAuthors = document.querySelectorAll('.post-author a');
 

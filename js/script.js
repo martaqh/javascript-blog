@@ -358,7 +358,7 @@ function generateAuthors(){
 
   for (let author in allAuthors) {
     /* [NEW] generate code of a link and add it to allAuthorsHTML variable  */
-    allAuthorsHTML += '<li><a href="#' + author + '"><span>' + author + ' (' + allAuthors[author] + ') </span></a></li>';
+    allAuthorsHTML += '<li><a href="#author-' + author + '"><span>' + author + ' (' + allAuthors[author] + ') </span></a></li>';
     console.log(allAuthorsHTML);
   /* [NEW] END LOOP: for each author in allAuthors */
   }

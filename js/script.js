@@ -8,8 +8,6 @@ const templates = {
   authorSidebarLink: Handlebars.compile(document.querySelector('#template-author-sidebar-link').innerHTML),
 };
 
-
-
 const opts = {
   tagSizes: {
     count: 5,

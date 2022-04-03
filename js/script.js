@@ -83,7 +83,7 @@ function generateTitleLinks(customSelector = '') {
 
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
-    /* genearte and save link's HTML */
+    /* save link's HTML data in an object and generate link html using a Handlebar template for article links */
 
     const linkHTMLData = {id: articleID, title: articleTitle};
     const linkHTML = templates.articleLink(linkHTMLData);
@@ -177,7 +177,7 @@ function generateTags() {
 
     for (let tag of tagsArray) {
       console.log(tag);
-      /* generate HTML of the link */
+      /* save link's HTML data in an object and generate link html using a Handlebar template for tag links */
       const linkHTMLData = {tag: tag};
       const linkHTML = templates.articleTag(linkHTMLData);
       console.log(linkHTML);
@@ -217,14 +217,14 @@ function generateTags() {
   console.log ('tagsParams:', tagsParams);
 
 
-  /* [NEW] create variable for all links' HTML code */
+  /* [NEWER] create variable for object containing all tags data */
 
   const allTagsData = {tags: []};
 
   /* [NEW] START LOOP: for each tag in allTags */
 
   for (let tag in allTags) {
-    /* [NEW] generate code of a link and add it to allTagsHTML variable  */
+    /* [NEWER] push enlisted data to the object allTagsData */
     allTagsData.tags.push({
       tag: tag,
       count: allTags[tag],
@@ -234,7 +234,7 @@ function generateTags() {
   /* [NEW] END LOOP: for each tag in allTags */
   }
 
-  /* [NEW] add HTML from allTagsHTML to tagList */
+  /* [NEWER] add HTML to tagList using Handlebar template for tag cloud links */
 
   tagList.innerHTML = templates.tagCloudLink(allTagsData);
   console.log(allTagsData);
@@ -301,7 +301,7 @@ function tagClickHandler(event){
 function addClickListenersToTags() {
   /* find all links to tags */
 
-  const linksToTags = document.querySelectorAll('.list a');
+  const linksToTags = document.querySelectorAll('a[href^="#tag-"');
   
 
   /* START LOOP: for each link */
@@ -320,7 +320,7 @@ addClickListenersToTags();
 
 
 function generateAuthors(){
-  /* [NEW] create a new variable allAuthors with an empty object*/
+  /* [NEWER] create a new variable allAuthors with an empty object*/
   let allAuthors = {};
   
   /* find all articles */
@@ -338,7 +338,7 @@ function generateAuthors(){
     let author = article.getAttribute('data-author');
     console.log(author);
 
-    /*  generate HTML of the link */
+    /* save link's HTML data in an object and generate link html using a Handlebar template for author links */
     const linkHTMLData = {author: author};
     const linkHTML = templates.articleAuthor(linkHTMLData);
     console.log(linkHTML);
@@ -366,14 +366,14 @@ function generateAuthors(){
   const authorsList = document.querySelector(optAuthorsListSelector);
   console.log(authorsList);
 
-  /* [NEW] create variable for all links' HTML code */
+  /* [NEWER] create variable for object containing all authors data */
 
   const allAuthorsData = {authors: []};
 
   /* [NEW] START LOOP: for each author in allAuthors */
 
   for (let author in allAuthors) {
-    /* [NEW] generate code of a link and add it to allAuthorsHTML variable  */
+    /* [NEWER] push enlisted data to the object allAuthorsData */
     allAuthorsData.authors.push({
       author: author,
       count: allAuthors[author],

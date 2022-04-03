@@ -249,7 +249,7 @@ function generateTags() {
     allTagsData.tags.push({
       tag: tag,
       count: allTags[tag],
-      className: calculateTagClass(allTags[tag], tagsParams)
+      className: calculateTagClass(allTags[tag], tagsParams),
     });
     
   /* [NEW] END LOOP: for each tag in allTags */
@@ -430,7 +430,7 @@ function authorClickHandler(event){
 
   /* find all author links with class active */
 
-  let activeAuthorLinks = document.querySelectorAll('a.active[href="#author-"]');
+  let activeAuthorLinks = document.querySelectorAll('a.active[href^="#author-"]');
   console.log(activeAuthorLinks);
 
   /* START LOOP: for each active author link */
